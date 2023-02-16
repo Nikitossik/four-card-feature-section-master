@@ -180,11 +180,11 @@ body {
     }
 
     .feature:nth-child(3) {
-        grid-area: calculator;
+        grid-area: karma;
     }
 
     .feature:nth-child(4) {
-        grid-area: karma;
+        grid-area: calculator;
     }
 
     .feature {
