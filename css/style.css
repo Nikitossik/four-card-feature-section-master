@@ -1,0 +1,198 @@
+@import url(./reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+:root {
+    --ff: 'Poppins', sans-serif;
+    --red: hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --orange: hsl(34, 97%, 64%);
+    --blue: hsl(212, 86%, 64%);
+    --neu-dark-blue: hsl(234, 12%, 34%);
+    --neu-grey-blue: hsl(229, 6%, 66%);
+    --neu-light-grey: hsl(0, 0%, 98%)
+}
+
+body {
+    font-size: 1rem;
+    line-height: 1.6;
+    font-family: var(--ff);
+    background-color: var(--neu-light-grey);
+}
+
+.wrapper {}
+
+.title {
+    font-weight: 600;
+    font-size: clamp(1.5rem, 1.2273rem + 1.3636vw, 2.25rem);
+    line-height: 1.5;
+    letter-spacing: 0.166667px;
+    color: var(--neu-dark-blue);
+    margin-bottom: 1rem;
+}
+
+.title span {
+    display: block;
+    font-weight: 200;
+}
+
+.text {
+    font-size: 0.9375rem;
+    letter-spacing: 0.104167px;
+    color: var(--neu-dark-blue);
+    opacity: 0.5;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.container {
+    padding: 0 2rem;
+    margin-inline: auto;
+}
+
+
+@media (min-width: 33.5em) {
+    .container {
+        max-width: 37.5rem;
+    }
+}
+
+@media (min-width: 56.25em) {
+    .container {
+        max-width: 60.25rem;
+    }
+
+    .header__text {
+        max-width: 33.75rem;
+    }
+}
+
+@media (min-width: 68.75em) {
+    .container {
+        max-width: 72.75rem;
+    }
+}
+
+
+/*================================================*/
+
+
+.header {
+    padding-top: 5.3125rem;
+    display: grid;
+    justify-content: center;
+}
+
+/*================================================*/
+
+.features {
+    padding: 5rem 0;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(14.75rem, 1fr));
+    grid-gap: 1.5rem;
+}
+
+.feature {
+    background: #FFFFFF;
+    box-shadow: 0px 15px 30px -11px rgba(131, 166, 210, 0.5);
+    border-radius: 0.5rem;
+    position: relative;
+    padding: 1.75rem;
+    overflow: hidden;
+}
+
+.feature::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3.5px;
+}
+
+.feature:nth-child(1)::before {
+    background-color: var(--cyan);
+}
+
+.feature:nth-child(2)::before {
+    background-color: var(--red);
+}
+
+.feature:nth-child(3)::before {
+    background-color: var(--orange);
+}
+
+.feature:nth-child(4)::before {
+    background-color: var(--blue);
+}
+
+.feature__title {
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    color: var(--neu-dark-blue);
+}
+
+.feature__text {
+    font-size: 0.8125rem;
+    line-height: 1.7;
+    letter-spacing: 0.0902778px;
+    margin-bottom: 2rem;
+}
+
+.feature__icon {
+    width: 57px;
+    height: 57px;
+    margin-left: auto;
+}
+
+@media (min-width: 56.25em) {
+    .features-grid {
+        grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
+    }
+}
+
+@media (min-width: 68.75em) {
+
+    .features {
+        padding: 4rem 0 5rem 0;
+    }
+
+    .features-grid {
+        grid-template-areas:
+            ".          team-builder         ."
+            "supervisor team-builder calculator"
+            "supervisor    karma    calculator"
+            ".             karma             .";
+        grid-gap: 1.875rem;
+    }
+
+    .feature:nth-child(1) {
+        grid-area: supervisor;
+    }
+
+    .feature:nth-child(2) {
+        grid-area: team-builder;
+    }
+
+    .feature:nth-child(3) {
+        grid-area: calculator;
+    }
+
+    .feature:nth-child(4) {
+        grid-area: karma;
+    }
+
+    .feature {
+        padding: 2rem;
+    }
+
+    .feature__icon {
+        width: 4rem;
+        height: 4rem;
+    }
+}
